@@ -200,6 +200,11 @@ namespace FaceMaker.UI
             this.txtBlue = new System.Windows.Forms.TextBox();
             this.txtGreen = new System.Windows.Forms.TextBox();
             this.txtRed = new System.Windows.Forms.TextBox();
+            this.picContrast = new System.Windows.Forms.PictureBox();
+            this.picBrightness = new System.Windows.Forms.PictureBox();
+            this.picBlue = new System.Windows.Forms.PictureBox();
+            this.picGreen = new System.Windows.Forms.PictureBox();
+            this.picRed = new System.Windows.Forms.PictureBox();
             this.tbBrightness = new System.Windows.Forms.TrackBar();
             this.tbBlue = new System.Windows.Forms.TrackBar();
             this.tbGreen = new System.Windows.Forms.TrackBar();
@@ -229,16 +234,16 @@ namespace FaceMaker.UI
             this.cmbPositionParent = new System.Windows.Forms.ComboBox();
             this.btnLoadWall = new System.Windows.Forms.Button();
             this.sfdWallImage = new System.Windows.Forms.OpenFileDialog();
-            this.picContrast = new System.Windows.Forms.PictureBox();
-            this.picBrightness = new System.Windows.Forms.PictureBox();
-            this.picBlue = new System.Windows.Forms.PictureBox();
-            this.picGreen = new System.Windows.Forms.PictureBox();
-            this.picRed = new System.Windows.Forms.PictureBox();
             this.picImage = new System.Windows.Forms.PictureBox();
             this.grpParts.SuspendLayout();
             this.grpLocation.SuspendLayout();
             this.grpColor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbContrast)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picContrast)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBrightness)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBlue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGreen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbBrightness)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbBlue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGreen)).BeginInit();
@@ -246,11 +251,6 @@ namespace FaceMaker.UI
             this.grpSaveSize.SuspendLayout();
             this.panel1.SuspendLayout();
             this.grpRelation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picContrast)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBrightness)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBlue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGreen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -357,7 +357,7 @@ namespace FaceMaker.UI
             this.grpLocation.Size = new System.Drawing.Size(142, 103);
             this.grpLocation.TabIndex = 1;
             this.grpLocation.TabStop = false;
-            this.grpLocation.Text = "position・rotation";
+            this.grpLocation.Text = "Position && Rotation";
             // 
             // checkMirror
             // 
@@ -485,7 +485,7 @@ namespace FaceMaker.UI
             this.txtContrast.Size = new System.Drawing.Size(35, 20);
             this.txtContrast.TabIndex = 9;
             this.txtContrast.Text = "0";
-            this.txtContrast.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtContrast.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtContrast.WordWrap = false;
             this.txtContrast.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
@@ -498,7 +498,7 @@ namespace FaceMaker.UI
             this.txtBrightness.Size = new System.Drawing.Size(35, 20);
             this.txtBrightness.TabIndex = 8;
             this.txtBrightness.Text = "0";
-            this.txtBrightness.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtBrightness.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBrightness.WordWrap = false;
             this.txtBrightness.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
@@ -511,7 +511,7 @@ namespace FaceMaker.UI
             this.txtBlue.Size = new System.Drawing.Size(35, 20);
             this.txtBlue.TabIndex = 7;
             this.txtBlue.Text = "0";
-            this.txtBlue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtBlue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBlue.WordWrap = false;
             this.txtBlue.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
@@ -524,7 +524,7 @@ namespace FaceMaker.UI
             this.txtGreen.Size = new System.Drawing.Size(35, 20);
             this.txtGreen.TabIndex = 6;
             this.txtGreen.Text = "0";
-            this.txtGreen.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtGreen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtGreen.WordWrap = false;
             this.txtGreen.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
@@ -537,9 +537,64 @@ namespace FaceMaker.UI
             this.txtRed.Size = new System.Drawing.Size(35, 20);
             this.txtRed.TabIndex = 5;
             this.txtRed.Text = "0";
-            this.txtRed.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtRed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtRed.WordWrap = false;
             this.txtRed.TextChanged += new System.EventHandler(this.txt_TextChanged);
+            // 
+            // picContrast
+            // 
+            this.picContrast.BackColor = System.Drawing.Color.Transparent;
+            this.picContrast.Image = global::Properties.Resources.picContrast;
+            this.picContrast.Location = new System.Drawing.Point(7, 129);
+            this.picContrast.Name = "picContrast";
+            this.picContrast.Size = new System.Drawing.Size(16, 17);
+            this.picContrast.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picContrast.TabIndex = 1;
+            this.picContrast.TabStop = false;
+            // 
+            // picBrightness
+            // 
+            this.picBrightness.BackColor = System.Drawing.Color.Transparent;
+            this.picBrightness.Image = global::Properties.Resources.picBrightness;
+            this.picBrightness.Location = new System.Drawing.Point(7, 103);
+            this.picBrightness.Name = "picBrightness";
+            this.picBrightness.Size = new System.Drawing.Size(16, 17);
+            this.picBrightness.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picBrightness.TabIndex = 1;
+            this.picBrightness.TabStop = false;
+            // 
+            // picBlue
+            // 
+            this.picBlue.BackColor = System.Drawing.Color.Transparent;
+            this.picBlue.Image = global::Properties.Resources.picBlue;
+            this.picBlue.Location = new System.Drawing.Point(7, 77);
+            this.picBlue.Name = "picBlue";
+            this.picBlue.Size = new System.Drawing.Size(16, 17);
+            this.picBlue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picBlue.TabIndex = 1;
+            this.picBlue.TabStop = false;
+            // 
+            // picGreen
+            // 
+            this.picGreen.BackColor = System.Drawing.Color.Transparent;
+            this.picGreen.Image = global::Properties.Resources.picGreen;
+            this.picGreen.Location = new System.Drawing.Point(7, 51);
+            this.picGreen.Name = "picGreen";
+            this.picGreen.Size = new System.Drawing.Size(16, 17);
+            this.picGreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picGreen.TabIndex = 1;
+            this.picGreen.TabStop = false;
+            // 
+            // picRed
+            // 
+            this.picRed.BackColor = System.Drawing.Color.Transparent;
+            this.picRed.Image = global::Properties.Resources.picRed;
+            this.picRed.Location = new System.Drawing.Point(7, 25);
+            this.picRed.Name = "picRed";
+            this.picRed.Size = new System.Drawing.Size(16, 17);
+            this.picRed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picRed.TabIndex = 1;
+            this.picRed.TabStop = false;
             // 
             // tbBrightness
             // 
@@ -658,9 +713,9 @@ namespace FaceMaker.UI
             // 
             this.btnSetDefault.Location = new System.Drawing.Point(166, 463);
             this.btnSetDefault.Name = "btnSetDefault";
-            this.btnSetDefault.Size = new System.Drawing.Size(87, 25);
+            this.btnSetDefault.Size = new System.Drawing.Size(95, 25);
             this.btnSetDefault.TabIndex = 7;
-            this.btnSetDefault.Text = "Set default";
+            this.btnSetDefault.Text = "set default";
             this.btnSetDefault.UseVisualStyleBackColor = true;
             this.btnSetDefault.Click += new System.EventHandler(this.btnSetDefault_Click);
             // 
@@ -705,26 +760,26 @@ namespace FaceMaker.UI
             this.grpSaveSize.Size = new System.Drawing.Size(141, 80);
             this.grpSaveSize.TabIndex = 5;
             this.grpSaveSize.TabStop = false;
-            this.grpSaveSize.Text = "save options";
+            this.grpSaveSize.Text = "Save options";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.radIndivisible);
             this.panel1.Controls.Add(this.radVisible);
-            this.panel1.Location = new System.Drawing.Point(44, 43);
+            this.panel1.Location = new System.Drawing.Point(52, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(91, 28);
+            this.panel1.Size = new System.Drawing.Size(86, 28);
             this.panel1.TabIndex = 14;
             // 
             // radIndivisible
             // 
             this.radIndivisible.AutoSize = true;
-            this.radIndivisible.Location = new System.Drawing.Point(44, 4);
+            this.radIndivisible.Location = new System.Drawing.Point(48, 5);
             this.radIndivisible.Name = "radIndivisible";
-            this.radIndivisible.Size = new System.Drawing.Size(61, 17);
+            this.radIndivisible.Size = new System.Drawing.Size(37, 17);
             this.radIndivisible.TabIndex = 15;
             this.radIndivisible.TabStop = true;
-            this.radIndivisible.Text = "through";
+            this.radIndivisible.Text = "no";
             this.radIndivisible.UseVisualStyleBackColor = true;
             this.radIndivisible.CheckedChanged += new System.EventHandler(this.radVisible_CheckedChanged);
             // 
@@ -742,12 +797,12 @@ namespace FaceMaker.UI
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 50);
+            this.label2.Location = new System.Drawing.Point(9, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.Size = new System.Drawing.Size(37, 30);
             this.label2.TabIndex = 13;
-            this.label2.Text = "background";
+            this.label2.Text = "bg visible";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
             // 
@@ -787,7 +842,7 @@ namespace FaceMaker.UI
             // 
             this.btnLoadSetting.Location = new System.Drawing.Point(166, 494);
             this.btnLoadSetting.Name = "btnLoadSetting";
-            this.btnLoadSetting.Size = new System.Drawing.Size(87, 25);
+            this.btnLoadSetting.Size = new System.Drawing.Size(95, 25);
             this.btnLoadSetting.TabIndex = 9;
             this.btnLoadSetting.Text = "load settings";
             this.btnLoadSetting.UseVisualStyleBackColor = true;
@@ -808,16 +863,16 @@ namespace FaceMaker.UI
             this.grpRelation.Size = new System.Drawing.Size(342, 59);
             this.grpRelation.TabIndex = 15;
             this.grpRelation.TabStop = false;
-            this.grpRelation.Text = "Linked";
+            this.grpRelation.Text = "Linked part to";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(182, 25);
+            this.label4.Location = new System.Drawing.Point(153, 25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.Size = new System.Drawing.Size(90, 13);
             this.label4.TabIndex = 13;
-            this.label4.Text = "pos・rot";
+            this.label4.Text = "position && rotation";
             // 
             // cmbPositionParent
             // 
@@ -849,7 +904,7 @@ namespace FaceMaker.UI
             // 
             this.btnLoadWall.Location = new System.Drawing.Point(166, 525);
             this.btnLoadWall.Name = "btnLoadWall";
-            this.btnLoadWall.Size = new System.Drawing.Size(87, 25);
+            this.btnLoadWall.Size = new System.Drawing.Size(95, 25);
             this.btnLoadWall.TabIndex = 11;
             this.btnLoadWall.Text = "load background";
             this.btnLoadWall.UseVisualStyleBackColor = true;
@@ -858,61 +913,6 @@ namespace FaceMaker.UI
             // sfdWallImage
             // 
             this.sfdWallImage.Filter = "24bits Bitmap(*.bmp)|*.bmp|Portable Network Graphics(*.png)|*.png";
-            // 
-            // picContrast
-            // 
-            this.picContrast.BackColor = System.Drawing.Color.Transparent;
-            this.picContrast.Image = global::Properties.Resources.picContrast;
-            this.picContrast.Location = new System.Drawing.Point(7, 129);
-            this.picContrast.Name = "picContrast";
-            this.picContrast.Size = new System.Drawing.Size(16, 17);
-            this.picContrast.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picContrast.TabIndex = 1;
-            this.picContrast.TabStop = false;
-            // 
-            // picBrightness
-            // 
-            this.picBrightness.BackColor = System.Drawing.Color.Transparent;
-            this.picBrightness.Image = global::Properties.Resources.picBrightness;
-            this.picBrightness.Location = new System.Drawing.Point(7, 103);
-            this.picBrightness.Name = "picBrightness";
-            this.picBrightness.Size = new System.Drawing.Size(16, 17);
-            this.picBrightness.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picBrightness.TabIndex = 1;
-            this.picBrightness.TabStop = false;
-            // 
-            // picBlue
-            // 
-            this.picBlue.BackColor = System.Drawing.Color.Transparent;
-            this.picBlue.Image = ((System.Drawing.Image)(resources.GetObject("picBlue.Image")));
-            this.picBlue.Location = new System.Drawing.Point(7, 77);
-            this.picBlue.Name = "picBlue";
-            this.picBlue.Size = new System.Drawing.Size(16, 17);
-            this.picBlue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picBlue.TabIndex = 1;
-            this.picBlue.TabStop = false;
-            // 
-            // picGreen
-            // 
-            this.picGreen.BackColor = System.Drawing.Color.Transparent;
-            this.picGreen.Image = global::Properties.Resources.picGreen;
-            this.picGreen.Location = new System.Drawing.Point(7, 51);
-            this.picGreen.Name = "picGreen";
-            this.picGreen.Size = new System.Drawing.Size(16, 17);
-            this.picGreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picGreen.TabIndex = 1;
-            this.picGreen.TabStop = false;
-            // 
-            // picRed
-            // 
-            this.picRed.BackColor = System.Drawing.Color.Transparent;
-            this.picRed.Image = global::Properties.Resources.picRed;
-            this.picRed.Location = new System.Drawing.Point(7, 25);
-            this.picRed.Name = "picRed";
-            this.picRed.Size = new System.Drawing.Size(16, 17);
-            this.picRed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picRed.TabIndex = 1;
-            this.picRed.TabStop = false;
             // 
             // picImage
             // 
@@ -956,6 +956,11 @@ namespace FaceMaker.UI
             this.grpColor.ResumeLayout(false);
             this.grpColor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbContrast)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picContrast)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBrightness)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBlue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGreen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picRed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbBrightness)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbBlue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbGreen)).EndInit();
@@ -966,11 +971,6 @@ namespace FaceMaker.UI
             this.panel1.PerformLayout();
             this.grpRelation.ResumeLayout(false);
             this.grpRelation.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picContrast)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBrightness)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBlue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picGreen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picRed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
             this.ResumeLayout(false);
 
